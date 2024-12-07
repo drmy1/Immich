@@ -1,13 +1,16 @@
 import time
 import sys
+import os
 import ipaddress
+from dotenv import load_dotenv
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 
-EMAIL: str = "****"
-PASSWORD: str = "****"
-NAME: str = "****"
+load_dotenv()
+EMAIL = os.environ.get("EMAIL")
+PASSWORD = os.environ.get("PASSWORD")
+NAME = os.environ.get("NAME")
 
 
 def registration(host, browser):
@@ -82,6 +85,7 @@ def main(host):
     browser = webdriver.Chrome(options=chrome_options)
     registration(host, browser)
     browser.quit()
+
 
 if __name__ == "__main__":
     if (len(sys.argv) - 1) == 1:
