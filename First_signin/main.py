@@ -52,6 +52,7 @@ def registration(host, browser):
         print(e)
     finally:
         print("Admin account created successfully")
+        browser.quit()
 
 
 def is_valid_ipv4(ip_object):
@@ -84,7 +85,6 @@ def main(host):
     chrome_options.add_argument("--headless=new")
     browser = webdriver.Chrome(options=chrome_options)
     registration(host, browser)
-    browser.quit()
 
 
 if __name__ == "__main__":
