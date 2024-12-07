@@ -5,9 +5,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 
-EMAIL: str = "adam.drmota@starnet.cz"
-PASSWORD: str = "TP25442544TP"
-NAME: str = "Adam"
+EMAIL: str = "****"
+PASSWORD: str = "****"
+NAME: str = "****"
 
 
 def registration(host, browser):
