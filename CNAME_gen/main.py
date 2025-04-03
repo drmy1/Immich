@@ -1,5 +1,6 @@
 import secrets
 import string
+import os
 
 
 class AlreadyInDB(Exception):
@@ -50,4 +51,7 @@ def send():
 
 
 if __name__ == "__main__":
+    # TODO change path to the location of CNAME.txt
+    # if not os.path.exists("CNAME.txt"):
+    #    generator()
     generator()
