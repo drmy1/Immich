@@ -11,7 +11,7 @@ def generator(digit=6) -> None:
     # TODO if secret in db, call generator() again and check again.
 
     cname = "".join(
-        secrets.choice(string.ascii_uppercase + string.digits + string.ascii_lowercase)
+        secrets.choice(string.digits + string.ascii_lowercase)
         for _ in range(digit)
     )
     try:
