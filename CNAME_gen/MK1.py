@@ -1,3 +1,7 @@
+# Project: CNAME-Generator
+# File Updated: 16-04-2025
+# Credits: Adam Drmota
+
 import secrets
 import string
 import os
@@ -42,7 +46,7 @@ def save_secret(cname) -> None:
 
 
 def send():
-    # TODO connect to proxy somehow or sand some API request somewhere with cname, WG-IP and wg_pubkey.
+    # TODO connect to proxy somehow or sand some API request somewhere with cname, WG-IP and wg_pubkey+ ping WG GW.
     # TODO Proxyserverer already has a automatic script for updating NGINX and WG config
 
     # TODO send cname to DB (can be done in the same step as above)

@@ -1,3 +1,7 @@
+# Project: CNAME-Generator
+# File Updated: 16-04-2025
+# Credits: Adam Drmota
+
 import secrets
 import os
 
@@ -33,14 +37,12 @@ def generator(digit=6) -> None:
     ]
     cname: str = ""
 
-    for i in range(3):
+    for _ in range(3):
         sam_ch = secrets.choice(sam)
         sou_ch = secrets.choice(sou)
         sam.remove(sam_ch)
         sou.remove(sou_ch)
         cname += sam_ch + sou_ch
-
-    print(cname)
 
     try:
         check_for_collision(cname)
@@ -70,7 +72,7 @@ def save_secret(cname) -> None:
 
 
 def send():
-    # TODO connect to proxy somehow or sand some API request somewhere with cname, WG-IP and wg_pubkey.
+    # TODO connect to proxy somehow or sand some API request somewhere with cname, WG-IP and wg_pubkey + ping WG GW.
     # TODO Proxyserverer already has a automatic script for updating NGINX and WG config
 
     # TODO send cname to DB (can be done in the same step as above)
@@ -80,6 +82,6 @@ def send():
 
 if __name__ == "__main__":
     # TODO change path to the location of CNAME.txt
-    if not os.path.exists("CNAME.txt"):
-        generator()
-    # generator()
+    # if not os.path.exists("CNAME.txt"):
+    #    generator()
+    generator()
